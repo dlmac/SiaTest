@@ -22,6 +22,8 @@
   - Potentailly a lot of private keys to maintain. Is this any different than it is now?
 - Can one user give access to all thier files to another user?
 - Define uSC, mSC? What is returned in current API?
+- What is the unlockHash in hostDB API call, should it be public?
+- What happens when you click Announce? Under what conditions would someone have to announce again?
 
 
 ##### General
@@ -36,3 +38,4 @@ Proposed API/siad Features
 - Easier key to identify and access a file. 
 - Define config on a per file/contract basis
 - Submit file(s) and start upload in separate API command.
+- API call to check if you are announced to the network.
