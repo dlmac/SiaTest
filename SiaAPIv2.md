@@ -35,7 +35,7 @@ HTTP errors availalbe
 TODO: Show examples or include examples in each API section?
 
 **Response**
-```
+```json
 HTTP error 401
 
 {  
