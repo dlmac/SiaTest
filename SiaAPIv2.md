@@ -57,7 +57,7 @@ Returns details about the status of the client.
 `None`
 
 **Example JSON Response**
-```
+```json
 {  
     status : "success",
     data : {
@@ -65,14 +65,13 @@ Returns details about the status of the client.
          "renting" : true, 
          "mining" : false,  
          "hosting" : false,
-         "latest-version" : 0.4.2,
-         "payment-address" : "<example_sc_address>",
+         "latestVersion" : 0.4.2,
+         "paymentAddress" : "<example_sc_address>",
          "peers" : 8,
          "hosts" : 109,
          "files" : 44,
          "contracts" : 103,
          "SC" : 0,
-         "polo-sc-price" : 0.00000103,
          "uptime" : "<time_in_seconds>"
     }
  }
@@ -94,30 +93,24 @@ Set client configuration
 | windowsSize  | <need_description>  |   | n |  |
 
 **JSON**
-```
+```json
 { 
     "address" : "<example_sc_address",
     "minFileSizeBytes" : 0,
-    "price: {
-                "key" : "price_in_sc_per_gb",
-                "value" : 0 }
-    "price_in_sc_per_gb" : 0,
-    "price_in_btc_per_gb" : 0.00000111,
-    "duration" : {
-                "durationType" : "week",
-                "durationValue" : 5}
+    "price_sc_gb" : 0,
     "maxDurationBlocks" : 5000,
     "windowsSize" : 0,
     "collateral" : 0,
+    "maxFileSize" : 0,
+    "minFileSize" : 0,
     "maxParallelUpload" : 4,
     "maxParallelDownload" : 4
-    }
  }
  ```
 
 **Response**
 
-```
+```json
 {  
     status : "success",
     message : "Renter configuration updated successfully",
@@ -135,23 +128,20 @@ TODO: Verify parameters
 >`none`
 
 **JSON Response**
-```
+```json
 { 
     status : "success",
     data : {
         "address" : "<example_sc_address",
         "minFileSizeBytes" : 0,
-        "price: {
-                    "key" : "price_in_sc_per_gb",
-                    "value" : 0 }
-        "price_in_sc_per_gb" : 0,
-        "price_in_btc_per_gb" : 0.00000111,
-        "duration" : {
-                    "durationType" : "week",
-                    "durationValue" : 5}
+        "price_sc_gb" : 0,
         "maxDurationBlocks" : 5000,
         "windowsSize" : 0,
-        "collateral" : 0
+        "collateral" : 0,
+        "maxFileSize" : 0,
+        "minFileSize" : 0,
+        "maxParallelUpload" : 4,
+        "maxParallelDownload" : 4
     }
  }
  ```
@@ -169,7 +159,7 @@ Returns all hosts
 | status | Filters active and/or inactive hosts | n | all | string |
 
 
-```
+```json
 { 
     "rpp" : 50,
     "page" : 1,
@@ -179,7 +169,7 @@ Returns all hosts
 
 ***Response***
 
-```
+```json
 { 
     status: "success"
     data : [
@@ -213,7 +203,7 @@ Returns details for all files you have access to.
 | page | Current Page | y | 1 | int |
 | status | downloading / uploading / deleted | n | all | string |
 
-```
+```json
 { 
     "rpp" : 50,
     "page" : 1,
@@ -235,7 +225,7 @@ Returns details for all files you have access to.
 | blocksRemaining | Block Remaining until contract expiration |  | int |
 | autoRenewContract | Automatically renews contract when contract expires |  | boolean |
 ***JSON***
-```
+```json
 { 
     status : "success",
     data : {
@@ -257,7 +247,7 @@ Uploads a file (adds to the upload queue)
 
 Parameters
 
-```
+```json
 { 
     "siaFileName" : "this_is_a_picture.jpg",
     "originalFileName" : "me_in_paris.jpg",
@@ -275,7 +265,7 @@ Parameters
 
 ***Response***
 
-```
+```json
 { 
     status : "success",
     uniqueFileName : "a93as9fa09th"
@@ -289,20 +279,20 @@ Deletes a specific file from the Sia blockchain.
 
 ***Parameters***
 
-```
+```json
 { "uniqueFileId" : "a93as9fa09th"}
 ```
 
 ***Response***
 
-```
+```json
 { 
     status : "success",
     message : "File deleted successfully"
  }
 ```
 
-```
+```json
 { 
     status : "error",
     message : "File not found"
@@ -320,7 +310,7 @@ download : Downloads files.
 
 Parameters
 
-```
+```json
 { 
     "uniqueFileId" : "a93as9fa09th",
     "siaASCII" : "",
@@ -341,7 +331,7 @@ Updates a specific files detail within the renter.
 
 Parameters
 
-```
+```json
 { 
     "uniqueFileId" : "a93as9fa09th",
     "siaFileName" : "paris.jpg"
@@ -350,7 +340,7 @@ Parameters
 
 Response
 
-```
+```json
 { 
     success : "true",
     data : {
