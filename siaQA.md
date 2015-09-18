@@ -34,8 +34,12 @@
 Proposed API/siad Features
 =====
 
-- Stop accepting new contracts
+Contracts/Renter
+- Ability to stop accepting new contracts (on/off switch)
 - Easier key to identify and access a file. 
 - Define config on a per file/contract basis
 - Submit file(s) and start upload in separate API command.
-- API call to check if you are announced to the network.
+- API call to check if you are announced to the network or not.
+
+Wallet
+- 
