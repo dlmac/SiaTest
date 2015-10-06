@@ -11,7 +11,7 @@
   - .sia?
   - ASCII?
   - if you lose this key, how do you get files back?
-  - What if computer crashes, do you lose access to all your files even if you backed up your wallet?
+  - What if computer crashes, do you lose access to all your files even if you backed up your wallet? (but not .sia file)
 - When a file is uploaded when is the ASCII available and where is it stored?
 - If you delete a file will shared access be removed as well?
 - What exactly happens when you use ASCII to view a file?
