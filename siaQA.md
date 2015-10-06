@@ -40,6 +40,7 @@ Contracts/Renter
 - Define config on a per file/contract basis
 - Submit file(s) and start upload in separate API command.
 - API call to check if you are announced to the network or not.
+- warnign if funds are not available for contract renewel.
 
 Wallet
 - 
